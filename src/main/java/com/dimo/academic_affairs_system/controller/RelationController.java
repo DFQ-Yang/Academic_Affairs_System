@@ -52,7 +52,7 @@ public class RelationController {
         return Result.success();
     }
 
-    @GetMapping("/api/etc/{student_id}")
+    @GetMapping("/api/stc/{student_id}")
     public Result get_student_allCourses(@PathVariable Integer student_id){
         log.info("now searching for all courses student: {} taught", student_id);
         List<Course> courses = relationService.get_student_allCourses(student_id);
@@ -67,7 +67,7 @@ public class RelationController {
         return Result.success();
     }
 
-    @GetMapping("/api/stc/{course_id}")
+    @GetMapping("/api/stc/c/{course_id}")
     public Result get_studentsInCourse(@PathVariable Integer course_id){
         log.info("now searching for all students in course: {} taught", course_id);
         List<Student> students = relationService.get_studentInCourse(course_id);
